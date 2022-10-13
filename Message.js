@@ -8,7 +8,7 @@ const Message = (props) => {
   return (
     <div>
       <img src={squrl} />
-      <h3>누구누구에게 남기는 한 마디</h3>
+      <h3>?에게 남기는 한 마디</h3>
       <input />
       <button
         onClick={() => {
