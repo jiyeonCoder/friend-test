@@ -7,6 +7,7 @@ import Start from "./Start";
 import Quiz from "./Quiz";
 import Score from "./Score";
 
+
 function App() {
   const [name, setName] = React.useState("Jiyeon");
 
