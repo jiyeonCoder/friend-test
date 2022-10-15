@@ -1,7 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Score = (props) => {
+  const history = useNavigate();
+
   const quiz_list = useSelector((state) => state.quiz.quiz_list);
   const user_answer_list = useSelector((state) => state.quiz.user_answer_list);
 
@@ -21,7 +24,12 @@ const Score = (props) => {
 
       <p>우와! 우린 참 친해요!</p>
 
-      <button>{props.name}에게 한 마디</button>
+      <button
+        onClick={() => {
+          history("/message");
+        }}>
+        {props.name}에게 한 마디
+      </button>
     </div>
   );
 };
