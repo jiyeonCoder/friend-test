@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addAnswer } from "./redux/modules/quiz";
 
+import Progress from "./Progress";
+
 const Quiz = (props) => {
   const history = useNavigate();
 
@@ -61,6 +63,7 @@ const Quiz = (props) => {
 
   return (
     <div>
+      <Progress />
       <p>{user_answer_list.length + 1}번 문제</p>
       <h3>{quiz_list[user_answer_list.length].question}</h3>
       <img src={sqrl} />
