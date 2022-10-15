@@ -1,13 +1,14 @@
 import React from "react";
 import img from "./등산다람쥐.png";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setName } from "./redux/modules/user";
 
 const Start = (props) => {
   const history = useNavigate();
   const dispatch = useDispatch();
   const name_ref = React.useRef(null);
+  const quiz_name = useSelector((state) => state.quiz.quiz_name);
 
   console.log(props);
 
@@ -41,7 +42,7 @@ const Start = (props) => {
             padding: "5px 10px",
             borderRadius: "30px",
           }}>
-          {props.name}
+          {quiz_name}
         </span>
         에 대해 얼마나 알고 있을까?
       </h1>
@@ -56,7 +57,7 @@ const Start = (props) => {
       />
       <button
         onClick={() => {
-          console.log(name_ref.current.value);
+          //console.log(name_ref.current.value);
           dispatch(setName(name_ref.current.value));
           history("/quiz");
         }}
